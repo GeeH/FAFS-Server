@@ -1,0 +1,9 @@
+{
+    "require": {
+        "zendframework/zend-log": "2.*",
+        "zendframework/zend-db": "2.*"
+    },
+    "autoload": {
+        "psr-0": {"FAFSServer": "src/"}
+    }
+}
