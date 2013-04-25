@@ -64,6 +64,7 @@ class FAFSServer
 
         // Loop through data as it's received
         while ($data = stream_socket_recvfrom($socket, $length, null, $receivedFrom)) {
+            stream_socket_sendto($socket, json_encode(array('status' => 1)), null, $receivedFrom);
             $this->log('info', 'Data received: ' . $data);
             $this->handleData($data);
         }
