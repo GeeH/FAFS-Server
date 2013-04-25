@@ -6,22 +6,28 @@
 
 namespace FAFSServer\Mapper;
 
-
 use Zend\Db\Sql\Expression;
 use Zend\Db\TableGateway\TableGateway;
 
-class DbTableMapper implements MapperInterface
+class TableGatewayMapper implements MapperInterface
 {
     /**
      * @var TableGateway
      */
     protected $tableGateway;
 
+    /**
+     * @param TableGateway $tableGateway
+     */
     public function __construct(TableGateway $tableGateway)
     {
         $this->tableGateway = $tableGateway;
     }
 
+    /**
+     * @param array $data
+     * @return int
+     */
     public function addCount(array $data)
     {
         return $this->tableGateway->insert(array(

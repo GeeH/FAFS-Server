@@ -6,8 +6,8 @@
 
 namespace FAFSServer\Service;
 
-use FAFSServer\Mapper\DbTableMapper;
 use FAFSServer\Mapper\MapperInterface;
+use FAFSServer\Mapper\TableGatewayMapper;
 use Zend\Db\Adapter\Adapter;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Log\Logger;
@@ -40,8 +40,8 @@ class FAFSServer
             $this->mapper = $mapper;
         }
         $adapter = new Adapter($this->config['db']);
-        $tableGateway = new TableGateway('stats', $adapter);
-        $this->mapper = new DbTableMapper($tableGateway);
+        $tableGateway = new TableGateway('data', $adapter);
+        $this->mapper = new TableGatewayMapper($tableGateway);
     }
 
     /**
