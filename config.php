@@ -6,8 +6,8 @@ return array(
     'db' => array(
         'driver' => 'Pdo',
         'dsn' => 'mysql:dbname=FAFS;host=127.0.0.1',
-        'username' => 'changeme',
-        'password' => 'changeme',
+        'username' => 'root',
+        'password' => 'root',
         'driver_options' => array(
             \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
         ),
